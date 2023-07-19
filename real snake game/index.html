@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/apple_watch_responsive_1.2.css">
+    <script src="./js/main.js" defer></script>
+    <link rel="shortcut icon" href="./production/svg/Skull.svg" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            S
+            <span class="smallSpace"> </span>
+            N
+            <span class="smallSpace"> </span>
+            A
+            <span class="smallSpace"> </span>
+            K
+            <span class="smallSpace"> </span>
+            E
+        </div>
+        
+        <div class="left">
+            <div class="settings">
+                <div class="title">Settings</div>
+                <div class="setting">
+                    <div class="key" data-key="timeScale">Speed</div>
+                    <input class="value"></input>
+                </div>
+                <div class="setting">
+                    <div class="key" data-key="startingBodyLength">Body Length</div>
+                    <input class="value"></input>
+                </div>
+                <div class="setting">
+                    <div class="key" data-key="gridSize">Board Size</div>
+                    <input class="value"></input>
+                </div>
+            </div>
+
+            <div class="score title">
+                Score:
+                <span class="scoreValue points">undefined</span>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="game">
+                <div class="canvasWrapper">
+                    <div class="startGame startGameDiv active">Start Game!</div>
+                    <div class="winLoseScreen">
+                        <div class="header">
+                            <div class="title">You Died!</div>
+                        </div>
+
+                        <div class="content">
+                            <div class="score">Score: 10</div>
+    
+                            <div class="highScore">High Score: 7</div>
+    
+                            <div class="winSettings">
+                                <div class="settings">
+                                    <div class="setting" data-key="timeScale">Speed:</div>
+                                    <div class="setting" data-key="startingBodyLength">Body Length:</div>
+                                    <div class="setting" data-key="gridSize">Board Size:</div>
+                                </div>
+                                <div class="values">
+                                    <div class="value">69</div>
+                                    <div class="value">69</div>
+                                    <div class="value">69</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonsWrapper">
+                            <button class="retryBtn">Retry</button>
+                            <button class="restartBtn">Restart</button>
+                            <button class="quitBtn">Quit</button>
+                        </div>
+                    </div>
+                    <canvas></canvas>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="controls">
+                <div class="title">Controls</div>
+                <div class="control">
+                    <div class="key" data-value="left">Left</div>
+                    <div class="values">
+                        <div class="value button1" data-index="0" data-active="false">a</div>
+                        <div class="value button2" data-index="1" data-active="false"><</div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="key" data-value="right">Right</div>
+                    <div class="values">
+                        <div class="value button1" data-index="0" data-active="false">d</div>
+                        <div class="value button2" data-index="1" data-active="false">></div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="key" data-value="up">Up</div>
+                    <div class="values">
+                        <div class="value button1" data-index="0" data-active="false">w</div>
+                        <div class="value button2" data-index="1" data-active="false">⌃</div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="key" data-value="down">Down</div>
+                    <div class="values">
+                        <div class="value button1" data-index="0" data-active="false">s</div>
+                        <div class="value button2" data-index="1" data-active="false">˅</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+
+  --pink-1: #fdc5f5;
+  --pink-2: #f7aef8;
+  --pink-3: #b388eb;
+  --blue-1: #8093f1;
+  --blue-2: #72ddf7;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  background-color: var(--pink-2);
+}
+
+input {
+  font-size: 3rem;
+}
+
+.authorization {
+  padding: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.authorization .title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.login, .signup {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pink-1);
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 50vh;
+  border-radius: 12px;
+  padding: 1% 3% 3%;
+}
+
+.login.off, .signup.off {
+  display: none;
+}
+
+.login > label, .signup > label {
+  text-align: left;
+  font-weight: 800;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.login > input, .signup > input {
+  width: 100%;
+  font-size: 2.5rem;
+  background-color: var(--pink-2);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 0 8px;
+
+}
+
+.login > button, .signup > button {
+  margin-top: 16px;
+  width: 65%;
+  background-color: var(--pink-2);
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  color: #fff;
+  border-radius: 12px;
+  padding: 6px;
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-weight: 800;
+}
+
+.login > button:hover, .signup > button:hover {
+  scale: 1.05;
+}
+
+
+
+
+
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--pink-2);
+}
+
+.container.active {
+  display: none;
+}
+
+.convos {
+  grid-row: span 3;
+  border-right: 8px solid var(--pink-3);
+  background-color: var(--pink-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 0;
+  gap: 12px;
+  overflow-y: scroll;
+  /* overflow-y: -moz-scrollbars-none;
+  -ms-overflow-style: none; */
+}
+
+/* .convos::-webkit-scrollbar { 
+  width: 0 ! important 
+} */
+
+.convos > div {
+  border: 4px solid var(--pink-3);
+  aspect-ratio: 1;
+  width: 70%;
+  border-radius: 50%;
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+}
+
+.convos > div.active {
+  background-color: var(--pink-2);
+}
+
+.convos > div > p {
+  font-size: 3rem;
+  font-weight: 800;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+  aspect-ratio: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.convos > div:hover {
+  border-radius: 40%;
+  scale: 1.1;
+  filter: brightness(0.9);
+}
+
+.convos > div:hover > p {
+  filter: brightness(1.1111);
+}
+
+.convos .addNewConversation {
+  position: relative;
+}
+
+.convos .addNewConversation svg {
+  fill: #fff;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  position: absolute;
+
+}
+
+
+.header {
+  border-bottom: 8px solid var(--pink-3);
+  background-color: var(--pink-1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.header h2 {
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.header .profilePic, .header .theirProfilePic, .header .deleteConvo {
+  aspect-ratio: 1;
+  height: 70%;
+  border: 4px solid var(--pink-3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 900;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.header .theirProfilePic {
+  background-color: var(--pink-2);
+}
+
+.header .deleteConvo {
+  height: 60%;
+  fill: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.header .deleteConvo svg {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.header .currentConvo {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.conversation {
+  position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.input {
+  background-color: var(--pink-1);
+  border-top: 8px solid var(--pink-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px 0 8px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.input input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 2.25rem;
+  color: var(--pink-3);
+}
+
+.input .sendmsg {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  height: 80%;
+  border: 4px solid var(--pink-3);
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+}
+
+.input .sendmsg svg {
+  fill: var(--pink-3);
+  aspect-ratio: 1;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -55% -55%;
+}
+
+.input .sendmsg.sendmsg:hover {
+  background-color: var(--pink-2);
+}
+
+.conversation .message {
+  background-color: var(--pink-1);
+  display: flex;
+  margin: 12px 0;
+  flex-direction: column;
+  padding: 12px;
+  text-align: left;
+}
+
+.conversation .message h2 {
+  font-size: 2rem;
+}
+
+.conversation .message h2, .conversation .message p {
+  margin: 0;
+}
+
+.conversation .message .heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.conversation .message .heading .profilePic {
+  aspect-ratio: 1;
+  height: 5vh;
+  border: 4px solid var(--pink-3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.conversation .message .maintext {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+.createNewConversation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: var(--pink-2);
+  border: 8px solid var(--pink-3);
+  border-radius: 12px;
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding-bottom: 16px;
+}
+
+.createNewConversation.active {
+  top: 100%;
+  translate: -50% 0%;
+}
+
+.createNewConversation input {
+  width: 75%;
+  background-color: var(--pink-1);
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.createNewConversation button {
+  width: 65%;
+  background-color: var(--pink-1);
+  font-size: 2.5rem;
+  font-weight: 800;
+  border-radius: 12px;
+  margin: 32px 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.createNewConversation button:hover {
+  scale: 1.05;
+}
