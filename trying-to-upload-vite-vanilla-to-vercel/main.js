@@ -8,6 +8,12 @@ const supabaseUrl = 'https://qoktiqjeuydpxhptvnoo.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFva3RpcWpldXlkcHhocHR2bm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY1ODc3MTgsImV4cCI6MjAwMjE2MzcxOH0.9atSLNVJbX8TdrvTAgP-5n7TqB4czTu8cnRs-_xyI0w'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+
+let { data: numbers, error } = await supabase
+  .from('numbers')
+  .select('*')
+console.log(numbers);
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
