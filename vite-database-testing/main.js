@@ -47,10 +47,10 @@ else {
           }
         } else {
           console.log('Signup success')
-          loadapp()
-          
           sessionStorage.setItem('username', signupUsernameInput.value)
           sessionStorage.setItem('password', signupPasswordInput.value)
+          
+          loadapp()
         }
     }
   })
